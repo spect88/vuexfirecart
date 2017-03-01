@@ -5,7 +5,7 @@ module.exports = (options, req) => ({
   entry: 'src/index.js',
   dist: 'dist',
   html: {
-    title: 'vuexfirecart'
+    title: 'Vue + Vuex + Firebase Shopping Cart'
   },
   postcss: [
     // add more postcss plugins here

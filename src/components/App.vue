@@ -1,11 +1,19 @@
 <template>
   <div id="app">
     <h1>Vue + Vuex + Firebase shopping cart</h1>
+    <navigation-bar></navigation-bar/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  export default {}
+  import NavigationBar from './NavigationBar'
+
+  export default {
+    components: {
+      NavigationBar
+    }
+  }
 </script>
 
 <style>

@@ -11,7 +11,17 @@
   "author": "Tomasz Szczęśniak-Szlagowski <spect88@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "vbuild": "^6.18.0"
+    "vbuild": "^6.20.1",
+    "vue-loader": "^11.1.3",
+    "vue-template-compiler": "^2.2.1"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "firebase": "^3.6.10",
+    "vue": "^2.2.1",
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1",
+    "vuex-router-sync": "^4.1.2",
+    "vuexfire": "^0.4.0"
+  }
 }
