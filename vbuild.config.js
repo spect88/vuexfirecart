@@ -12,7 +12,15 @@ module.exports = (options, req) => ({
     // by default we have autoprefixer pre added
   ],
   webpack(cfg) {
-    cfg.resolve.modules.push(path.resolve('src'))
+    // the order here is important, e.g. if you need to load
+    // firebase module, make sure 'node_modules' is before '.',
+    // or 'firebase.json' could be loaded
+    cfg.resolve.modules = [
+      path.resolve('src'),
+      path.resolve('node_modules'),
+      path.resolve('node_modules/vbuild/node_modules'),
+      path.resolve('.')
+    ]
     
     return cfg
   }

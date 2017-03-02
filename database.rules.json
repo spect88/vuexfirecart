@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "cart-items": {
+      ".read": "true",
+      ".write": "true"
+    },
+    "products": {
+      ".read": "true",
+      ".write": "false"
+    }
+  }
+}

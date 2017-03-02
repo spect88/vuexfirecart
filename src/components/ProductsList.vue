@@ -62,7 +62,7 @@
         const productId = Number(formData.get('productId'))
         const quantity = Number(formData.get('quantity'))
         if (quantity < 1) return
-        this.$store.commit('addToCart', { productId, quantity })
+        this.$store.dispatch('addToCart', { productId, quantity })
       }
     }
   }

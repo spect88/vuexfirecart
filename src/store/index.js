@@ -15,5 +15,6 @@ export default new Vuex.Store({
     products,
     cart
   },
-  strict: !isProduction
+  // FIXME: should be !isProduction, but vuexfire doesn't work in strict mode
+  strict: false
 })

@@ -46,11 +46,14 @@
     computed: {
       ...mapGetters(['allCartItems', 'allProducts']),
       cartItems() {
-        return this.allCartItems.map(item => {
-          const product = this.allProducts.find(p => p.id === item.productId)
-          const subtotal = product.price * item.quantity
-          return { ...item, product, subtotal }
-        })
+        return this.allCartItems
+          .map(item => {
+            const product = this.allProducts.find(p => p.id === item.productId)
+            if (!product) return null
+            const subtotal = product.price * item.quantity
+            return { ...item, product, subtotal }
+          })
+          .filter(x => x != null)
       },
       totalPrice() {
         return this.cartItems.reduce((sum, item) => sum + item.subtotal, 0)
@@ -58,13 +61,13 @@
     },
     methods: {
       onQuantityChange(item) {
-        this.$store.commit('changeQuantity', {
+        this.$store.dispatch('changeQuantity', {
           productId: item.productId,
           quantity: item.quantity
         })
       },
       onRemoveFromCart(productId) {
-        this.$store.commit('removeFromCart', { productId })
+        this.$store.dispatch('removeFromCart', { productId })
       }
     }
   }
